@@ -18,29 +18,28 @@
         <video id='my-video' class='video-js vjs-big-play-centered' preload='auto' width='800' 
         data-setup='{}' controls>
             <source src="step-by-step.mp4" type="video/mp4">
-            <track src="./chapters.vtt" kind="chapters" label="English" srclang="en">
-            <!-- <track kind="chapters" label="English" srclang="en" src="https://github.com/chelBot/videoJS/blob/master/chapters.vtt" default> -->
+            <track default src="chapters.vtt" kind="chapters" label="English" srclang="en" />
             <p class="vjs-no-js">
                 To view this video, please enable JavaScript and consider upgrading to a web browser that supports HTML5 video.
             </p>
         </video>
         <script>
-                console.log("hi");
-                const video = videojs("my-video", {
-                    playbackRates : [0.5, 1, 1.5, 2], 
-                    // fluid: true
-                });
-                $( document ).ready(function() {
-                    // const video = videojs("my-video");
-                        
-                    $("#my-video").mouseleave(function(){
-                        video.pause();
-                    });
+            console.log("hi");
+            const video = videojs("my-video", {
+                playbackRates : [0.5, 1, 1.5, 2], 
+                // fluid: true
+            });
+            $( document ).ready(function() {
+                // const video = videojs("my-video");
                     
-                    $("#my-video").mouseenter(function(){
-                        video.play();
-                    });
+                $("#my-video").mouseleave(function(){
+                    video.pause();
                 });
-            </script>
+                
+                $("#my-video").mouseenter(function(){
+                    video.play();
+                });
+            });
+        </script>
     </body>
 </html>
